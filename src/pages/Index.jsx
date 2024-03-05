@@ -36,13 +36,13 @@ const Index = () => {
   };
 
   return (
-    <VStack p={999}>
-      <Heading mb="999">gta 6 leaks</Heading>
+    <VStack p={8}>
+      <Heading mb="8">gta 6 leaks</Heading>
       <HStack>
         <Input value={inputValue} onChange={handleInputChange} onKeyPress={handleKeyPress} placeholder="Add a new task..." />
         <IconButton icon={<FaPlus />} onClick={addTodo} colorScheme="green" aria-label="Add todo" />
       </HStack>
-      <List spacing={3} my={5} w="100%">
+      <List spacing={0} my={1} w="10%">
         {todos.map((todo, index) => (
           <ListItem key={index} p={2} bg="red.900" borderRadius="md">
             <HStack justify="space-between">
