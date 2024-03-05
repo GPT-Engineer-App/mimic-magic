@@ -1,13 +1,14 @@
 import React from "react";
 import UploadButton from "../components/UploadButton";
-import { VStack, Heading, HStack } from "@chakra-ui/react";
+import { VStack, Heading, HStack, Textarea } from "@chakra-ui/react";
 
 const Index = () => {
   return (
     <VStack p={8}>
       <Heading mb="8">gta 6 leaks</Heading>
-      <HStack mb="4">
+      <HStack mb="4" spacing="24px">
         <UploadButton onFileSelect={(fileContent) => {}} />
+        <Textarea placeholder="Enter text here..." />
       </HStack>
     </VStack>
   );
@@ -28,6 +29,7 @@ function FileUploader({ onFileSelect }) {
 
 // Removed duplicate React import
 
+// React import already exists, so this line is unnecessary and should be removed.
 function ImagePasteArea({ onImagePaste }) {
   useEffect(() => {
     const handlePaste = (e) => {
