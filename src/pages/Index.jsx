@@ -44,7 +44,7 @@ const Index = () => {
       </HStack>
       <List spacing={3} my={5} w="100%">
         {todos.map((todo, index) => (
-          <ListItem key={index} p={2} bg="gray.100" borderRadius="md">
+          <ListItem key={index} p={2} bg="red.500" borderRadius="md">
             <HStack justify="space-between">
               <Box>{todo}</Box>
               <IconButton icon={<FaTrash />} onClick={() => deleteTodo(index)} colorScheme="red" aria-label="Delete todo" />
