@@ -40,7 +40,7 @@ const Index = () => {
       <Heading mb="8">gta 6 leaks</Heading>
       <HStack>
         <Input value={inputValue} onChange={handleInputChange} onKeyPress={handleKeyPress} placeholder="Add a new leak..." />
-        <IconButton icon={<FaPlus />} onClick={addTodo} colorScheme="green" aria-label="Add todo" />
+        <IconButton icon={<FaPlus />} onClick={addTodo} colorScheme="green and blue" aria-label="Add todo" />
       </HStack>
       <List spacing={0} my={1} w="10%">
         {todos.map((todo, index) => (
