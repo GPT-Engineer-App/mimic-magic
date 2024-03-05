@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UploadButton from "../components/UploadButton";
 import { Box, Heading, Input, Button, List, ListItem, ListIcon, VStack, HStack, IconButton, useToast } from "@chakra-ui/react";
 import { FaPlus, FaTrash } from "react-icons/fa";
 
@@ -38,6 +39,9 @@ const Index = () => {
   return (
     <VStack p={8}>
       <Heading mb="8">gta 6 leaks</Heading>
+      <HStack mb="4">
+        <UploadButton onFileSelect={(file) => console.log(file)} />
+      </HStack>
       <HStack>
         <Input value={inputValue} onChange={handleInputChange} onKeyPress={handleKeyPress} placeholder="Add a new leak..." />
         <IconButton icon={<FaPlus />} onClick={addTodo} colorScheme="darkgreen" aria-label="Add todo" />
