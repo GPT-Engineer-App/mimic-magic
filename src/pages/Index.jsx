@@ -13,7 +13,7 @@ const Index = () => {
     if (inputValue.trim() === "") {
       toast({
         title: "No content",
-        description: "Todo can't be empty",
+        description: "1234567890 can't be empty",
         status: "warning",
         duration: 2000,
         isClosable: true,
