@@ -11,10 +11,10 @@ const UploadButton = ({ onFileSelect }) => {
 
   const handleChange = (event) => {
     const fileUploaded = event.target.files[0];
-    if (fileUploaded) {
+    if (fileUploaded && fileUploaded.type.startsWith("image/")) {
       const reader = new FileReader();
       reader.onload = (e) => onFileSelect(e.target.result);
-      reader.readAsText(fileUploaded);
+      reader.readAsDataURL(fileUploaded);
     }
   };
 
