@@ -14,7 +14,7 @@ const Index = () => {
         <UploadButton onFileSelect={setImageDataUrl} />
         {imageDataUrl && (
           <>
-            <Image src={imageDataUrl} alt="Uploaded image" boxSize="70px" objectFit="cover" />
+            <Image src={imageDataUrl} alt="Uploaded image" boxSize="100px" objectFit="cover" />
             <Textarea placeholder="Enter text here" />
           </>
         )}
