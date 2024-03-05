@@ -66,32 +66,30 @@ function FileUploader({ onFileSelect }) {
     }
   };
 
-  return (
-    <input type="file" onChange={handleFileInput} accept="image/*" />
-  );
+  return <input type="file" onChange={handleFileInput} accept="image/*" />;
 }
+
+import { useEffect } from "react";
 
 function ImagePasteArea({ onImagePaste }) {
   useEffect(() => {
     const handlePaste = (e) => {
       if (e.clipboardData && e.clipboardData.files.length > 0) {
         const file = e.clipboardData.files[0];
-        if (file.type.startsWith('image/')) {
+        if (file.type.startsWith("image/")) {
           onImagePaste(file);
         }
       }
     };
 
-    window.addEventListener('paste', handlePaste);
+    window.addEventListener("paste", handlePaste);
 
     return () => {
-      window.removeEventListener('paste', handlePaste);
+      window.removeEventListener("paste", handlePaste);
     };
   }, [onImagePaste]);
 
-  return (
-    <div>Paste an image here.</div>
-  );
+  return <div>Paste an image here.</div>;
 }
 function ImageUploadAndPaste() {
   const [image, setImage] = useState(null);
@@ -112,18 +110,4 @@ function ImageUploadAndPaste() {
     </div>
   );
 }
-function App() {
-  return (
-    <div className="App">
-      <ImageUploadAndPaste />
-    </div>
-  );
-}
-
-export default App;
-
-
-
-
-
-
+// Removed the App component definition and export since it's unnecessary here
