@@ -40,7 +40,7 @@ const Index = () => {
     <VStack p={8}>
       <Heading mb="8">gta 6 leaks</Heading>
       <HStack mb="4">
-        <UploadButton onFileSelect={(file) => console.log(file)} />
+        <UploadButton onFileSelect={(fileContent) => setInputValue(fileContent)} />
       </HStack>
       <HStack>
         <Input value={inputValue} onChange={handleInputChange} onKeyPress={handleKeyPress} placeholder="Add a new leak..." />
