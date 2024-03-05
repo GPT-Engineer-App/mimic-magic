@@ -12,7 +12,7 @@ const Index = () => {
       <Heading mb="8">gta 6 leaks</Heading>
       <HStack mb="4" spacing="24px">
         <UploadButton onFileSelect={setImageDataUrl} />
-        {imageDataUrl && <Image src={imageDataUrl} alt="Uploaded image" boxSize="100px" objectFit="cover" />}
+        {imageDataUrl && <Image src={imageDataUrl} alt="Uploaded image" boxSize="70px" objectFit="cover" />}
       </HStack>
     </VStack>
   );
