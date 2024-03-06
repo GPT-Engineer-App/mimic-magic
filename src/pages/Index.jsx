@@ -7,14 +7,39 @@ import { Image } from "@chakra-ui/react";
 const Index = () => {
   const [imageDataUrl, setImageDataUrl] = React.useState("");
 
+  const handleImageUpload = (file) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const size = Math.min(img.width, img.height);
+        canvas.width = canvas.height = 70;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, (img.width - size) / 2, (img.height - size) / 2, size, size, 0, 0, 70, 70);
+        setImageDataUrl(canvas.toDataURL());
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  };
+
   return (
     <VStack p={8}>
       <Heading mb="8">gta 6 leaks</Heading>
       <HStack mb="4" spacing="24px">
-        <UploadButton onFileSelect={setImageDataUrl} />
-        <>
-          <Textarea placeholder="Enter text here" style={{ backgroundImage: imageDataUrl ? `url(${imageDataUrl})` : "none", backgroundSize: "70px 70px", backgroundPosition: "center", width: "300px", height: "100px", backgroundRepeat: "no-repeat" }} />
-        </>
+        <UploadButton onFileSelect={handleImageUpload} />
+        <Textarea
+          placeholder="Enter text here"
+          style={{
+            backgroundImage: imageDataUrl ? `url(${imageDataUrl})` : "none",
+            backgroundSize: "70px 70px",
+            backgroundPosition: "center",
+            width: "300px",
+            height: "100px",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
       </HStack>
     </VStack>
   );
