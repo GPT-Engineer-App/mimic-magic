@@ -13,7 +13,7 @@ const Index = () => {
       <HStack mb="4" spacing="24px">
         <UploadButton onFileSelect={setImageDataUrl} />
         <>
-          <Textarea placeholder="Enter text here" style={imageDataUrl ? { backgroundImage: `url(${imageDataUrl})`, backgroundSize: "70px 70px", backgroundPosition: "center", width: "300px", height: "100px", backgroundRepeat: "no-repeat" } : { width: "300px", height: "100px" }} />
+          <Textarea placeholder="Enter text here" style={imageDataUrl ? { backgroundImage: `url(${imageDataUrl})`, backgroundSize: "contain", backgroundPosition: "center", width: "300px", height: "100px", backgroundRepeat: "no-repeat" } : { width: "300px", height: "100px" }} />
         </>
       </HStack>
     </VStack>
@@ -81,29 +81,4 @@ function ImageUploadAndPaste() {
 }
 import { useCallback } from "react";
 
-const onPaste = useCallback((event) => {
-  const items = (event.clipboardData || event.originalEvent.clipboardData).items;
-  for (const item of items) {
-    if (item.type.indexOf("image") === 0) {
-      const blob = item.getAsFile();
-      const reader = new FileReader();
-      reader.onload = function (event) {
-        // Add the image URL to your state
-        setImages((prevImages) => [...prevImages, event.target.result]);
-      };
-      reader.readAsDataURL(blob);
-    }
-  }
-}, []);
-
-const onFileChange = useCallback((event) => {
-  const files = Array.from(event.target.files);
-  files.forEach((file) => {
-    const reader = new FileReader();
-    reader.onload = function (event) {
-      // Add the image URL to your state
-      setImages((prevImages) => [...prevImages, event.target.result]);
-    };
-    reader.readAsDataURL(file);
-  });
-}, []);
+// Both the onPaste and onFileChange callbacks are referencing an undeclared function 'setImages'.
