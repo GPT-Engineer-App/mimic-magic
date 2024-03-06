@@ -12,12 +12,9 @@ const Index = () => {
       <Heading mb="8">gta 6 leaks</Heading>
       <HStack mb="4" spacing="24px">
         <UploadButton onFileSelect={setImageDataUrl} />
-        {imageDataUrl && (
-          <>
-            <Image src={imageDataUrl} alt="Uploaded image" boxSize="100px" objectFit="cover" />
-            <Textarea placeholder="Enter text here" />
-          </>
-        )}
+        <>
+          <Textarea placeholder="Enter text here" style={imageDataUrl ? { backgroundImage: `url(${imageDataUrl})`, backgroundSize: "cover", backgroundPosition: "center", width: "300px", height: "100px", backgroundRepeat: "no-repeat" } : { width: "300px", height: "100px" }} />
+        </>
       </HStack>
     </VStack>
   );
