@@ -13,8 +13,7 @@ const Index = () => {
       <HStack mb="4" spacing="24px">
         <UploadButton onFileSelect={setImageDataUrl} />
         <>
-          <Image src={imageDataUrl} alt="Uploaded image" boxSize="70px" objectFit="cover" display={imageDataUrl ? "block" : "none"} />
-          <Textarea placeholder="Enter text here" style={imageDataUrl ? { backgroundImage: `url(${imageDataUrl})`, backgroundSize: "70px 70px", height: "200px" } : {}} />
+          <Textarea placeholder="Enter text here" style={imageDataUrl ? { backgroundImage: `url(${imageDataUrl})`, backgroundSize: "cover", height: "200px" } : {}} />
         </>
       </HStack>
     </VStack>
