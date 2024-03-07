@@ -36,6 +36,10 @@ const storage = multer.diskStorage({
     res.send({ id: req.dir.split('/').pop() });
   });
   
+  app.get('/', (req, res) => {
+    res.send("")
+  })
+
   app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
   });
